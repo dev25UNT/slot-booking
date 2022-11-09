@@ -27,6 +27,8 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 16rem;
+  overflow: scroll;
+  height: 255px;
 }
 
 .TimeCard {
@@ -39,6 +41,18 @@
   margin-inline: 1rem;
   background-color: #ffffff;
   cursor: pointer;
+}
+
+.slotModal {
+  border-radius: 3rem !important;
+  margin-inline: 5rem !important;
+  background-color: aliceblue !important;
+}
+.close {
+  width: 22px;
+  position: absolute;
+  top: 43px;
+  right: 120px;
 }
 
 .SelectedCard {

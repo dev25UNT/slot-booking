@@ -4,7 +4,7 @@ import SlotModal from "../components/SlotModal";
 const HomePage = () => {
   const [btnClicked, setBtnClicked] = useState(false);
   const clickHandler = () => {
-    setBtnClicked(true);
+    setBtnClicked(!btnClicked);
   };
   return (
     <div className="homePage">
@@ -13,7 +13,9 @@ const HomePage = () => {
           Book your Slot
         </button>
       )}
-      {btnClicked && <SlotModal btnClicked={btnClicked} />}
+      {btnClicked && (
+        <SlotModal btnClicked={btnClicked} clickHandler={clickHandler} />
+      )}
     </div>
   );
 };

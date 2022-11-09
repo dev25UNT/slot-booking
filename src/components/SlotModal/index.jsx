@@ -22,6 +22,8 @@ import {
   getDatesInRange,
   startdate,
 } from "../../utils/calenderPackage";
+import cross from "../../cross.svg";
+
 import { calenderslidersettings } from "../../utils/sliderSettings";
 
 export const monthsforcal = [
@@ -172,7 +174,7 @@ const timesofsloats = [
   },
 ];
 
-const SlotModal = ({ btnClicked }) => {
+const SlotModal = ({ btnClicked, clickHandler }) => {
   const [timesloatsata, setTimeSloatData] = useState([]);
   const [showTimeError, setShowTimeError] = useState(false);
   const [proccessComplete, setProcessComplete] = useState(false);
@@ -210,7 +212,7 @@ const SlotModal = ({ btnClicked }) => {
   );
 
   return (
-    <>
+    <div className={styles.slotModal}>
       {/*======================================== date time selection ======================================== */}
       {dateandTimeSelection ? (
         <Row>
@@ -225,6 +227,7 @@ const SlotModal = ({ btnClicked }) => {
 
           <Col xs={12} md={12} lg={12} xl={12}>
             <h5 className={styles.SubtitleText}>Select Date</h5>
+            <img className={styles.close} src={cross} onClick={clickHandler} />
           </Col>
 
           {/* date calander */}
@@ -293,7 +296,7 @@ const SlotModal = ({ btnClicked }) => {
           </Col>
         </Row>
       ) : null}
-    </>
+    </div>
   );
 };
 
