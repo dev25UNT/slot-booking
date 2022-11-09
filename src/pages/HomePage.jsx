@@ -7,7 +7,7 @@ const HomePage = () => {
     setBtnClicked(!btnClicked);
   };
   return (
-    <div className="homePage">
+    <div className={btnClicked ? "modal" : "homePage"}>
       {!btnClicked && (
         <button className="slotButton" onClick={clickHandler}>
           Book your Slot
