@@ -12,5 +12,5 @@ code {
     monospace;
 }
 .modal-open {
-  overflow: scroll !important;
+  overflow: hidden;
 }

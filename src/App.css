@@ -11,8 +11,8 @@
 
 html {
   background: #b5c0ad;
-  min-height: 720px;
-  min-width: 320px;
+  /* min-height: 720px;
+  min-width: 320px; */
 }
 
 html,
@@ -121,5 +121,6 @@ button.secondary:hover {
 }
 .homePage {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden !important;
 }
