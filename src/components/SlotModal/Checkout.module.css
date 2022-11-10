@@ -43,6 +43,7 @@
   margin-inline: 1rem;
   background-color: #ffffff;
   cursor: pointer;
+  border-radius: 1rem;
 }
 
 .slotModal {
@@ -64,6 +65,7 @@
 .SelectedCard {
   background-color: rgb(227, 155, 166);
   color: #ffffff;
+  border-radius: 1rem;
 }
 
 .TimeCardCol {

@@ -1,5 +1,4 @@
 import "./App.css";
-import LoginPage from "./pages/LoginPage";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import "bootstrap/dist/css/bootstrap.css";
@@ -7,10 +6,6 @@ import "bootstrap/dist/css/bootstrap.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginPage />,
-  },
-  {
-    path: "/home",
     element: <HomePage />,
   },
 ]);

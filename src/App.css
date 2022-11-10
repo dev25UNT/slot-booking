@@ -9,6 +9,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+#root {
+  overflow: hidden;
+}
+
 html {
   background: #b5c0ad;
   /* min-height: 720px;

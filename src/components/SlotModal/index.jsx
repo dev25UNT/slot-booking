@@ -4,25 +4,13 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Alert, Col, Modal, Row } from "react-bootstrap";
 import Slider from "react-slick";
-// import PrimaryButton from "../common/PrimaryButton";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  API_URL,
-  //   daysforcal,
-  GMAP_API,
-  //   monthsforcal,
-  //   timesofsloats,
-} from "../../utils/data";
-//   import { FiSearch } from "react-icons/fi";
-//   import ReactGoogleAutocomplete from "react-google-autocomplete";
-//   import { Gmaps, Marker } from "react-gmaps";
 import {
   enddate,
   getDatesInRange,
   startdate,
 } from "../../utils/calenderPackage";
-import cross from "../../cross.svg";
 
 import { calenderslidersettings } from "../../utils/sliderSettings";
 
@@ -221,7 +209,6 @@ const SlotModal = ({ btnClicked, clickHandler }) => {
       className="CheckoutPopup"
     >
       <Modal.Body className={styles.ModalBody}>
-        {/* <div className={styles.slotModal}> */}
         {/*======================================== date time selection ======================================== */}
         {dateandTimeSelection ? (
           <Row>

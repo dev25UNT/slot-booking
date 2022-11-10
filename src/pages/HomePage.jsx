@@ -5,9 +5,6 @@ import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Image } from "react-bootstrap";
-import video from "../video.svg";
-import safty from "../safty.svg";
-import house from "../house.svg";
 import arrow from "../arrow.svg";
 import Main from "../Main.png";
 import "./Homepage.css";
@@ -20,7 +17,6 @@ const HomePage = () => {
   console.log(btnClicked, "btnClicked");
   return (
     <div className="homePage">
-      (
       <section className="Introduction">
         <Container fluid className="contfluid">
           <Row>
@@ -33,14 +29,16 @@ const HomePage = () => {
                   Want to train your pet? Or Looking for someone who takes care
                   of your pet? Well we are here.
                 </p>
-                <Row>
+                <Row className="btnRow" style={{ paddingLeft: "3rem" }}>
                   <Col xl={6} xs={6} className="bookbutton">
                     <Button
                       style={{
-                        border: "2px solid #E39BA6",
-                        background: " #E39BA6",
-                        color: "#fff",
+                        width: "12rem",
+                        border: "2px dotted rgb(227, 155, 166)",
+                        background: "rgb(255, 255, 255)",
+                        color: "black",
                         borderRadius: "20rem",
+                        // width: "10rem",
                       }}
                       onClick={clickHandler}
                     >
@@ -84,45 +82,12 @@ const HomePage = () => {
             </Col>
 
             <Col xl={6}>
-              <div className="card">
-                <Row className="align-items-center">
-                  <Col xl={6} className="cardcol">
-                    <img src={video} />
-                  </Col>
-                  <Col xl={6} className="cardcol1">
-                    <h3>Moniter your pet</h3>
-                    <p>We have a watch 24*7</p>
-                  </Col>
-                </Row>
-              </div>
-              <div className="card1">
-                <Row className="align-items-center">
-                  <Col xl={6} className="cardcol">
-                    <img src={safty} />
-                  </Col>
-                  <Col xl={6} className="cardcol1">
-                    <h3>Safety First </h3>
-                    <p>We care them like babies</p>
-                  </Col>
-                </Row>
-              </div>
               <img src={Main} style={{ width: "100%", height: "auto" }} />
-              <div className="card2">
-                <Row className="align-items-center">
-                  <Col xl={6} className="cardcol">
-                    <img src={house} />
-                  </Col>
-                  <Col xl={6} className="cardcol1">
-                    <h3>Spacious play yards</h3>
-                    <p>We play on a field</p>
-                  </Col>
-                </Row>
-              </div>
             </Col>
           </Row>
         </Container>
       </section>
-      )
+
       <SlotModal btnClicked={btnClicked} clickHandler={clickHandler} />
     </div>
   );
