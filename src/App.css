@@ -13,12 +13,6 @@
   overflow: hidden;
 }
 
-html {
-  background: #b5c0ad;
-  /* min-height: 720px;
-  min-width: 320px; */
-}
-
 html,
 body {
   height: 100%;
@@ -126,10 +120,11 @@ button.secondary:hover {
 .homePage {
   width: 100vw;
   height: 100%;
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 .modal {
   width: 100vw;

@@ -48,7 +48,7 @@ const HomePage = () => {
                   <Col xl={6} xs={6} className="pricebutton">
                     <Button
                       style={{
-                        width: "9rem",
+                        width: "12rem",
                         border: "2px dotted #E39BA6",
                         background: " #fff",
                         color: "black",
@@ -59,7 +59,7 @@ const HomePage = () => {
                     </Button>
                   </Col>
                   <section className="Doitsection">
-                    <Image src={arrow} />
+                    <Image src={arrow} className="arrowImage" />
 
                     <button id="doitnow"> Do it Now...!!</button>
                     <div class="lds-spinner">
