@@ -10,9 +10,11 @@
 }
 
 .SubtitleText {
-  font-size: 18px;
+  font-size: 35px;
   text-align: center;
-  font-weight: 100;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .ButtonCol {
@@ -54,9 +56,13 @@
   top: 103px;
   right: 120px;
 }
-
+.timeColumnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .SelectedCard {
-  background-color: orange;
+  background-color: rgb(227, 155, 166);
   color: #ffffff;
 }
 
@@ -87,7 +93,7 @@
 }
 
 .SelectedCardOfDate {
-  background-color: orange;
+  background-color: rgb(227, 155, 166);
   color: #ffffff;
 }
 
@@ -107,7 +113,8 @@
 .CalenderWrraper {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  padding: 0 15rem;
+  /* padding: 0 15rem; */
+  padding-inline: 50px !important;
 }
 
 .RightArrow {

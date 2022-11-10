@@ -20,12 +20,12 @@ body {
   height: 100%;
 }
 
-#root {
+/* #root {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
-}
+} */
 
 .Login {
   background: #fff;

@@ -212,91 +212,111 @@ const SlotModal = ({ btnClicked, clickHandler }) => {
   );
 
   return (
-    <div className={styles.slotModal}>
-      {/*======================================== date time selection ======================================== */}
-      {dateandTimeSelection ? (
-        <Row>
-          <Col xs={12} md={12} lg={12} xl={12}>
-            {showDateError && (
-              <Alert variant={"danger"}>Please Select Date !</Alert>
-            )}
-            {showTimeError && (
-              <Alert variant={"danger"}>Please Select Time !</Alert>
-            )}
-          </Col>
+    <Modal
+      show={btnClicked}
+      onHide={clickHandler}
+      size={changeModalSize ? "xl" : "lg"}
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      className="CheckoutPopup"
+    >
+      <Modal.Body className={styles.ModalBody}>
+        {/* <div className={styles.slotModal}> */}
+        {/*======================================== date time selection ======================================== */}
+        {dateandTimeSelection ? (
+          <Row>
+            <Col xs={12} md={12} lg={12} xl={12}>
+              {showDateError && (
+                <Alert variant={"danger"}>Please Select Date !</Alert>
+              )}
+              {showTimeError && (
+                <Alert variant={"danger"}>Please Select Time !</Alert>
+              )}
+            </Col>
 
-          <Col xs={12} md={12} lg={12} xl={12}>
-            <h5 className={styles.SubtitleText}>Select Date</h5>
-            <img className={styles.close} src={cross} onClick={clickHandler} />
-          </Col>
+            <Col xs={12} md={12} lg={12} xl={12}>
+              <h5 className={styles.SubtitleText}>Select Date</h5>
+              {/* <img
+                className={styles.close}
+                src={cross}
+                onClick={clickHandler}
+              /> */}
+            </Col>
 
-          {/* date calander */}
-          <Col
-            xs={12}
-            md={12}
-            lg={12}
-            xl={12}
-            className={styles.CalenderWrraper}
-          >
-            <Slider {...calenderslidersettings} className={"CalendarSlider"}>
-              {datelist.map((v, i) => (
-                <div
-                  className={`${styles.CardOfdate} ${
-                    selectedDate === i && styles.SelectedCardOfDate
-                  }`}
-                  key={i}
-                  onClick={() => {
-                    setShowDateError(false);
-                    setSelectedDate(i);
-                  }}
-                >
-                  <div className={styles.Day}>{daysforcal[v.days]}</div>
-                  <div className={styles.Date}>{v.dates + v.slogan}</div>
-                  <div className={styles.Slogan}>{monthsforcal[v.month]}</div>
-                </div>
-              ))}
-            </Slider>
-          </Col>
-
-          {/* time sloat  */}
-          <Col xs={12} md={12} lg={12} xl={12}>
-            <h5 className={styles.SubtitleText}>Select Time</h5>
-            <Row className={styles.SelectionTimeRow}>
-              {completedSloat.map((v, i) => (
-                <Col xs={6} xl={4} key={i} className={`${styles.TimeCardCol}`}>
+            {/* date calander */}
+            <Col
+              xs={12}
+              md={12}
+              lg={12}
+              xl={12}
+              className={styles.CalenderWrraper}
+            >
+              <Slider {...calenderslidersettings} className={"CalendarSlider"}>
+                {datelist.map((v, i) => (
                   <div
-                    onClick={() =>
-                      new Date().getDate() == selectedDate &&
-                      completedSloat.includes(v.time)
-                        ? null
-                        : timeselectedHandler(i)
-                    }
-                    className={`${styles.TimeCard} ${
-                      selectedTime === i && styles.SelectedCard
+                    className={`${styles.CardOfdate} ${
+                      selectedDate === i && styles.SelectedCardOfDate
                     }`}
-                    style={
-                      new Date().getDate() == selectedDate &&
-                      completedSloat.includes(v.time)
-                        ? {
-                            backgroundColor: "grey",
-                            cursor: "not-allowed",
-                            opacity: "0.8",
-                            userSelect: "none",
-                          }
-                        : null
-                    }
+                    key={i}
+                    onClick={() => {
+                      setShowDateError(false);
+                      setSelectedDate(i);
+                    }}
                   >
-                    <p className={styles.TimeText}>
-                      {v.time?.replace("TO", "-")}
-                    </p>
+                    <div className={styles.Day}>{daysforcal[v.days]}</div>
+                    <div className={styles.Date}>{v.dates + v.slogan}</div>
+                    <div className={styles.Slogan}>{monthsforcal[v.month]}</div>
                   </div>
-                </Col>
-              ))}
-            </Row>
-          </Col>
-        </Row>
-      ) : null}
-    </div>
+                ))}
+              </Slider>
+            </Col>
+
+            {/* time sloat  */}
+            <Col xs={12} md={12} lg={12} xl={12}>
+              <h5 className={styles.SubtitleText}>Select Time</h5>
+              <Row className={styles.SelectionTimeRow}>
+                {completedSloat.map((v, i) => (
+                  <Col
+                    xs={6}
+                    xl={4}
+                    key={i}
+                    className={`${styles.TimeCardCol}`}
+                  >
+                    <div
+                      onClick={() =>
+                        new Date().getDate() == selectedDate &&
+                        completedSloat.includes(v.time)
+                          ? null
+                          : timeselectedHandler(i)
+                      }
+                      className={`${styles.TimeCard} ${
+                        selectedTime === i && styles.SelectedCard
+                      }`}
+                      style={
+                        new Date().getDate() == selectedDate &&
+                        completedSloat.includes(v.time)
+                          ? {
+                              backgroundColor: "grey",
+                              cursor: "not-allowed",
+                              opacity: "0.8",
+                              userSelect: "none",
+                            }
+                          : null
+                      }
+                    >
+                      <p className={styles.TimeText}>
+                        {v.time?.replace("TO", "-")}
+                      </p>
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+          </Row>
+        ) : null}
+        {/* </div> */}
+      </Modal.Body>
+    </Modal>
   );
 };
 
